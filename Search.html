@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindSlaver — Explorar Cartas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app-layout">
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-brand">MindSlaver</div>
+    <div class="nav-links">
+      <button class="nav-link active">Explorar</button>
+      <button class="nav-link" onclick="location.href='Dashboard.html'">Mi Cuenta</button>
+      <button class="nav-link">Mis Cartas</button>
+      <button class="nav-link">Intercambios</button>
+      <button class="nav-link">Mensajes</button>
+    </div>
+    <div class="nav-right">
+      <div class="nav-badge">4.9 · 127 ops</div>
+      <div class="nav-avatar" onclick="location.href='Dashboard.html'">DK</div>
+      <button class="btn-logout" onclick="location.href='Login.html'">Salir</button>
+    </div>
+  </nav>
+
+  <div class="search-hero">
+    <div class="search-hero-title">Encuentra tu carta perfecta</div>
+    <div class="search-hero-sub">Intercambia con coleccionistas de todo el mundo</div>
+    <div class="search-bar-wrap">
+      <span class="search-icon">⚔</span>
+      <input type="text" class="search-bar" placeholder="Busca por nombre, set, colección..." oninput="filterCards()" id="search-input">
+    </div>
+  </div>
+
+  <div class="filters-bar">
+    <!-- GAME -->
+    <div class="filter-group">
+      <span class="filter-label">Juego</span>
+      <div class="filter-chips" id="game-chips">
+        <button class="chip active" data-game="all" onclick="toggleChip(this,'game')">Todos</button>
+        <button class="chip" data-game="pokemon" onclick="toggleChip(this,'game')">Pokémon</button>
+        <button class="chip" data-game="mtg" onclick="toggleChip(this,'game')">MTG</button>
+        <button class="chip" data-game="yugioh" onclick="toggleChip(this,'game')">Yu-Gi-Oh</button>
+        <button class="chip" data-game="lorcana" onclick="toggleChip(this,'game')">Lorcana</button>
+        <button class="chip" data-game="op" onclick="toggleChip(this,'game')">One Piece</button>
+      </div>
+    </div>
+
+    <div class="filter-sep"></div>
+
+    <div class="filter-group">
+      <span class="filter-label">Rareza</span>
+      <div class="filter-chips" id="rarity-chips">
+        <button class="chip active" data-rarity="all" onclick="toggleChip(this,'rarity')">Todas</button>
+        <button class="chip" data-rarity="common" onclick="toggleChip(this,'rarity')">Común</button>
+        <button class="chip" data-rarity="uncommon" onclick="toggleChip(this,'rarity')">Poco Común</button>
+        <button class="chip" data-rarity="rare" onclick="toggleChip(this,'rarity')">Rara</button>
+        <button class="chip" data-rarity="ultra" onclick="toggleChip(this,'rarity')">Ultra Rara</button>
+        <button class="chip" data-rarity="secret" onclick="toggleChip(this,'rarity')">Secreta</button>
+      </div>
+    </div>
+
+    <div class="filter-sep"></div>
+
+    <div class="filter-group">
+      <span class="filter-label">Estado</span>
+      <div class="filter-chips" id="state-chips">
+        <button class="chip active" data-state="all" onclick="toggleChip(this,'state')">Todos</button>
+        <button class="chip" data-state="nm" onclick="toggleChip(this,'state')">NM</button>
+        <button class="chip" data-state="lp" onclick="toggleChip(this,'state')">LP</button>
+        <button class="chip" data-state="mp" onclick="toggleChip(this,'state')">MP</button>
+        <button class="chip" data-state="hp" onclick="toggleChip(this,'state')">HP</button>
+      </div>
+    </div>
+
+    <div class="filter-actions">
+      <button class="btn-sm" onclick="clearFilters()">Limpiar</button>
+      <button class="btn-sm gold" onclick="filterCards()">Aplicar</button>
+    </div>
+  </div>
+
+  <div class="results-header">
+    <div class="results-count">Mostrando <span id="result-count">24</span> cartas encontradas</div>
+    <select class="sort-select">
+      <option>Precio: menor a mayor</option>
+      <option>Precio: mayor a menor</option>
+      <option>Más recientes</option>
+      <option>Mejor valorados</option>
+      <option>Nombre A-Z</option>
+    </select>
+  </div>
+
+  <div class="cards-grid" id="cards-grid"></div>
+</div>
+
+<script src="js/search.js"></script>
+<script>
+  renderCards(cards);
+</script>
+</body>
+</html>

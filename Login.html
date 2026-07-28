@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindSlaver — Iniciar Sesión</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div id="page-login">
+  <div class="login-bg-cards">
+    <img src="img/Carta-riftbound.png" alt="MindSlaver Logo" class="bg-card">
+    <img src="img/magic-card.jpg" alt="MindSlaver Logo" class="bg-card">
+    <img src="img/Pokemon Card.png" alt="MindSlaver Logo" class="bg-card">  
+  </div>
+
+  <div class="brand-name">MindSlaver</div>
+
+
+    <div class="cards-login">
+      <div class="login-tabs">
+        <button class="login-tab active" onclick="switchLoginTab('login', event)">Iniciar Sesión</button>
+        <button class="login-tab" onclick="switchLoginTab('register', event)">Registrarse</button>
+      </div>
+
+      <form class="login-form" id="login-form">
+        <div class="form-group">
+          <label class="form-label">Correo electrónico</label>
+          <input type="email" class="form-input" id="email-login" placeholder="duelist@gmail.com">
+        </div>
+        <div id="emailError" style="color:var(--red); font-size:0.9rem; ; display:none;"></div> 
+        <div class="form-group">
+          <label class="form-label">Contraseña</label>
+          <input type="password" class="form-input" id="password-login" placeholder="Password">
+        </div>
+        <div id="passwordError" style="color:var(--red); font-size:0.9rem; ; display:none;"></div> 
+
+
+        <div id="globalMessage" style="color:var(--red); font-size:0.9rem; ; display:none;"></div> 
+
+        <div style="text-align:right; margin-bottom:0.75rem;">
+          <span style="font-size:0.8rem; color:var(--gold-dim); cursor:pointer; font-style:italic;">¿Olvidaste tu contraseña?</span>
+        </div>
+        <button class="btn-primary" type="submit" id="submitBtn">Entrar</button>
+
+        <div class="login-divider">o continúa con</div>
+
+        <div class="social-btns">
+          <button class="btn-social" onclick="location.href='Search.html'">Google</button>
+          <button class="btn-social" onclick="location.href='Search.html'">Discord</button>
+        </div>
+      </form>
+
+      <form class="register-form" id="register-form">
+        <div class="form-group">
+          <label class="form-label">Nombre de usuario</label>
+          <input type="text" class="form-input" placeholder="LegendaryDuelist99">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Correo electrónico</label>
+          <input type="email" class="form-input" placeholder="duelist@gmail.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Contraseña</label>
+          <input type="password" class="form-input" placeholder="*******">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Confirmar contraseña</label>
+          <input type="password" class="form-input" placeholder="*******">
+        </div>
+        <button class="btn-primary" type="submit" onclick="location.href='Search.html'">Crear Cuenta</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="js/login.js"></script>
+</body>
+</html>

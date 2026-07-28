@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindSlaver — Mi Cuenta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="app-layout">
+  <nav class="nav">
+    <div class="nav-brand">MindSlaver</div>
+    <div class="nav-links">
+      <button class="nav-link" onclick="location.href='Search.html'">Explorar</button>
+      <button class="nav-link active">Mi Cuenta</button>
+      <button class="nav-link">Mis Cartas</button>
+      <button class="nav-link">Intercambios</button>
+      <button class="nav-link">Mensajes</button>
+    </div>
+    <div class="nav-right">
+      <div class="nav-badge">4.9 · 127 ops</div>
+      <div class="nav-avatar">DS</div>
+      <button class="btn-logout" onclick="location.href='Login.html'">Salir</button>
+    </div>
+  </nav>
+
+  <div class="dash-layout">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-section-title">General</div>
+      <button class="sidebar-item active" onclick="showDashSection('overview', this)">
+        <span class="sidebar-item-icon">📊</span>
+        <span class="sidebar-item-label">Resumen</span>
+      </button>
+
+      <div class="sidebar-section-title" style="margin-top:1.25rem">Cuenta</div>
+      <button class="sidebar-item" onclick="showDashSection('personal', this)">
+        <span class="sidebar-item-icon">👤</span>
+        <span class="sidebar-item-label">Información Personal</span>
+      </button>
+      <button class="sidebar-item" onclick="showDashSection('security', this)">
+        <span class="sidebar-item-icon">🔒</span>
+        <span class="sidebar-item-label">Seguridad</span>
+      </button>
+      <button class="sidebar-item" onclick="showDashSection('notifications', this)">
+        <span class="sidebar-item-icon">🔔</span>
+        <span class="sidebar-item-label">Notificaciones</span>
+      </button>
+
+      <div class="sidebar-section-title" style="margin-top:1.25rem">Transacciones</div>
+      <button class="sidebar-item" onclick="showDashSection('shipping', this)">
+        <span class="sidebar-item-icon">📦</span>
+        <span class="sidebar-item-label">Datos de Envío</span>
+      </button>
+      <button class="sidebar-item" onclick="showDashSection('payment', this)">
+        <span class="sidebar-item-icon">💳</span>
+        <span class="sidebar-item-label">Datos de Pago</span>
+      </button>
+
+      <div class="sidebar-user">
+        <div class="sidebar-user-name" id="user-name"><span id="overview-username"></span></div>
+        <div class="sidebar-user-meta">TRADER PRO · BOGOTÁ, CO</div>
+      </div>
+    </aside>
+
+    <main class="dash-content">
+
+      <!-- OVERVIEW -->
+        <div id="dash-overview" class="dash-section active">
+          <div class="section-header">
+            <div>
+              <div class="section-title">Resumen de Cuenta</div>
+              <div class="section-subtitle">Bienvenido de vuelta, <span id="overview-username">Usuario</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card" style="--accent: var(--gold)">
+            <div class="stat-value">247</div>
+            <div class="stat-label">Cartas publicadas</div>
+            <div class="stat-icon">CV</div>
+          </div>
+          <div class="stat-card" style="--accent: var(--violet)">
+            <div class="stat-value">89</div>
+            <div class="stat-label">Intercambios completados</div>
+            <div class="stat-icon">OK</div>
+          </div>
+          <div class="stat-card" style="--accent: var(--teal)">
+            <div class="stat-value">4.9★</div>
+            <div class="stat-label">Calificación promedio</div>
+            <div class="stat-icon">★</div>
+          </div>
+          <div class="stat-card" style="--accent: var(--crimson)">
+            <div class="stat-value">$1.2K</div>
+            <div class="stat-label">Valor estimado colección</div>
+            <div class="stat-icon">$</div>
+          </div>
+        </div>
+
+        <div class="section-header" style="margin-top:1.5rem">
+          <div class="section-title" style="font-size:1rem">Actividad Reciente</div>
+        </div>
+
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="activity-icon">OK</div>
+            <div class="activity-text">
+              <div class="activity-title">Intercambio completado · Charizard ex por Black Lotus</div>
+              <div class="activity-time">Hace 2 horas · Con @MagicMaster99</div>
+            </div>
+            <div class="activity-amount">+$85.00</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">UP</div>
+            <div class="activity-text">
+              <div class="activity-title">Nueva carta publicada · Blue-Eyes White Dragon (NM)</div>
+              <div class="activity-time">Hace 5 horas</div>
+            </div>
+            <div class="activity-amount">$45.00</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">MSG</div>
+            <div class="activity-text">
+              <div class="activity-title">Nueva oferta recibida en Pikachu Promo 2023</div>
+              <div class="activity-time">Hace 1 día · De @PikaPower</div>
+            </div>
+            <div class="activity-amount">$12.00</div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon">★</div>
+            <div class="activity-text">
+              <div class="activity-title">Nueva valoración 5★ recibida de @LorcanaLord</div>
+              <div class="activity-time">Hace 2 días</div>
+            </div>
+            <div class="activity-amount">5.0★</div>
+          </div>
+        </div>
+      </div>
+
+      <div id="dash-personal" class="dash-section">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Información Personal</div>
+            <div class="section-subtitle">Actualiza tu perfil público y datos de contacto</div>
+          </div>
+        </div>
+
+        <div class="alert success" id="personal-alert">✓ Información personal actualizada correctamente</div>
+
+        <div class="form-panel">
+          <div class="panel-title">Perfil Público</div>
+          <div class="avatar-section">
+            <div class="avatar-preview">DK</div>
+            <div class="avatar-info">
+              <div class="avatar-name">DarkKnight</div>
+              <div class="avatar-handle"><span id="user-handle">@darkknight</span> · Miembro desde Mar 2022</div>
+              <button class="btn-upload">Cambiar foto</button>
+            </div>
+          </div>
+          <div class="form-grid">
+            <div class="form-group-dash">
+              <label class="form-label-dash">Nombre de usuario</label>
+              <input type="text" class="form-input-dash" id="username-input" value="DarkKnight">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Nombre para mostrar</label>
+              <input type="text" class="form-input-dash" value="Carlos Medina">
+            </div>
+            <div class="form-group-dash span-2">
+              <label class="form-label-dash">Biografía</label>
+              <textarea class="form-input-dash" rows="2" style="resize:vertical">Coleccionista de MTG y Pokémon desde 2018. Especialista en rarezas vintage y ediciones limitadas. Siempre buscando completar mis sets.</textarea>
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">País</label>
+              <select class="form-input-dash">
+                <option selected>Colombia</option>
+                <option>México</option>
+                <option>Argentina</option>
+                <option>Chile</option>
+                <option>España</option>
+              </select>
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Ciudad</label>
+              <input type="text" class="form-input-dash" value="Bogotá">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <div class="panel-title">Datos de Contacto</div>
+          <div class="form-grid">
+            <div class="form-group-dash">
+              <label class="form-label-dash">Correo electrónico</label>
+              <input type="email" class="form-input-dash" value="carlos@MindSlaver.com">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Teléfono</label>
+              <input type="tel" class="form-input-dash" value="+57 310 555 0192">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <div class="panel-title">Preferencias de Juego</div>
+          <div class="form-grid cols-3">
+            <div class="form-group-dash">
+              <label class="form-label-dash">Juego principal</label>
+              <select class="form-input-dash">
+                <option>Magic: The Gathering</option>
+                <option selected>Pokémon TCG</option>
+                <option>Yu-Gi-Oh!</option>
+                <option>Lorcana</option>
+                <option>One Piece</option>
+              </select>
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Modalidad preferida</label>
+              <select class="form-input-dash">
+                <option>Solo venta</option>
+                <option selected>Intercambio + Venta</option>
+                <option>Solo intercambio</option>
+              </select>
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Visibilidad del perfil</label>
+              <select class="form-input-dash">
+                <option selected>Público</option>
+                <option>Solo miembros</option>
+                <option>Privado</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-cancel">Cancelar</button>
+          <button class="btn-save" onclick="showAlert('personal-alert')">Guardar Cambios</button>
+        </div>
+      </div>
+
+      <!-- SECURITY -->
+      <div id="dash-security" class="dash-section">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Seguridad</div>
+            <div class="section-subtitle">Mantén tu cuenta protegida</div>
+          </div>
+        </div>
+
+        <div class="alert success" id="security-alert">✓ Contraseña actualizada correctamente</div>
+
+        <div class="form-panel">
+          <div class="panel-title">Cambiar Contraseña</div>
+          <div class="form-grid full">
+            <div class="form-group-dash">
+              <label class="form-label-dash">Contraseña actual</label>
+              <input type="password" class="form-input-dash" placeholder="••••••••">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Nueva contraseña</label>
+              <input type="password" class="form-input-dash" placeholder="••••••••">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Confirmar nueva contraseña</label>
+              <input type="password" class="form-input-dash" placeholder="••••••••">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-cancel">Cancelar</button>
+            <button class="btn-save" onclick="showAlert('security-alert')">Actualizar Contraseña</button>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <div class="panel-title">Autenticación de Dos Factores</div>
+          <div class="toggle-wrap" onclick="this.querySelector('.toggle').classList.toggle('on')">
+            <div class="toggle on"></div>
+            <div class="toggle-text">
+              <div class="toggle-title">Activar 2FA por aplicación</div>
+              <div class="toggle-desc">Google Authenticator / Authy</div>
+            </div>
+          </div>
+          <div class="toggle-wrap" onclick="this.querySelector('.toggle').classList.toggle('on')">
+            <div class="toggle"></div>
+            <div class="toggle-text">
+              <div class="toggle-title">2FA por SMS</div>
+              <div class="toggle-desc">+57 310 ••• 0192</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="dash-notifications" class="dash-section">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Notificaciones</div>
+            <div class="section-subtitle">Controla cómo y cuándo te contactamos</div>
+          </div>
+        </div>
+
+        <div class="alert success" id="notif-alert">✓ Preferencias de notificación guardadas</div>
+
+        <div class="form-panel">
+          <div class="panel-title">Notificaciones por correo</div>
+          <div class="toggle-wrap" onclick="this.querySelector('.toggle').classList.toggle('on')">
+            <div class="toggle on"></div>
+            <div class="toggle-text">
+              <div class="toggle-title">Nueva oferta recibida</div>
+              <div class="toggle-desc">Cuando alguien hace una oferta en tus cartas</div>
+            </div>
+          </div>
+          <div class="toggle-wrap" onclick="this.querySelector('.toggle').classList.toggle('on')">
+            <div class="toggle on"></div>
+            <div class="toggle-text">
+              <div class="toggle-title">Intercambio completado</div>
+              <div class="toggle-desc">Confirmación al cerrar un trato</div>
+            </div>
+          </div>
+          <div class="toggle-wrap" onclick="this.querySelector('.toggle').classList.toggle('on')">
+            <div class="toggle"></div>
+            <div class="toggle-text">
+              <div class="toggle-title">Boletín semanal</div>
+              <div class="toggle-desc">Cartas nuevas y tendencias del mercado</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <div class="panel-title">Notificaciones push</div>
+          <div class="toggle-wrap" onclick="this.querySelector('.toggle').classList.toggle('on')">
+            <div class="toggle on"></div>
+            <div class="toggle-text">
+              <div class="toggle-title">Mensajes directos</div>
+              <div class="toggle-desc">Conversaciones con otros traders</div>
+            </div>
+          </div>
+          <div class="toggle-wrap" onclick="this.querySelector('.toggle').classList.toggle('on')">
+            <div class="toggle on"></div>
+            <div class="toggle-text">
+              <div class="toggle-title">Alertas de precio</div>
+              <div class="toggle-desc">Cuando una carta en tu lista de deseos baja de precio</div>
+            </div>
+          </div>
+          <div class="toggle-wrap" onclick="this.querySelector('.toggle').classList.toggle('on')">
+            <div class="toggle"></div>
+            <div class="toggle-text">
+              <div class="toggle-title">Novedades y torneos</div>
+              <div class="toggle-desc">Eventos especiales en la plataforma</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button class="btn-save" onclick="showAlert('notif-alert')">Guardar Preferencias</button>
+        </div>
+      </div>
+
+      <div id="dash-shipping" class="dash-section">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Datos de Envío</div>
+            <div class="section-subtitle">Gestiona tus direcciones de entrega</div>
+          </div>
+          <button class="btn-sm gold">+ Agregar dirección</button>
+        </div>
+
+        <div class="alert success" id="shipping-alert">✓ Datos de envío actualizados</div>
+
+        <div class="shipping-summary">
+          <div class="shipping-stat">
+            <div class="shipping-stat-value">12</div>
+            <div class="shipping-stat-label">Paquetes enviados</div>
+          </div>
+          <div class="shipping-stat">
+            <div class="shipping-stat-value">5</div>
+            <div class="shipping-stat-label">Paquetes recibidos</div>
+          </div>
+          <div class="shipping-stat">
+            <div class="shipping-stat-value">2</div>
+            <div class="shipping-stat-label">Direcciones guardadas</div>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <div class="panel-title">Dirección Principal</div>
+          <div class="form-grid">
+            <div class="form-group-dash">
+              <label class="form-label-dash">Nombre completo del destinatario</label>
+              <input type="text" class="form-input-dash" value="Carlos Medina Ruiz">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Teléfono de contacto</label>
+              <input type="tel" class="form-input-dash" value="+57 310 555 0192">
+            </div>
+            <div class="form-group-dash span-2">
+              <label class="form-label-dash">Dirección</label>
+              <input type="text" class="form-input-dash" value="Calle 100 #15-20, Apto 302">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Ciudad</label>
+              <input type="text" class="form-input-dash" value="Bogotá">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Departamento / Estado</label>
+              <input type="text" class="form-input-dash" value="Cundinamarca">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Código Postal</label>
+              <input type="text" class="form-input-dash" value="110111">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">País</label>
+              <select class="form-input-dash">
+                <option selected>Colombia</option>
+                <option>México</option>
+                <option>Argentina</option>
+              </select>
+            </div>
+            <div class="form-group-dash span-2">
+              <label class="form-label-dash">Instrucciones especiales (opcional)</label>
+              <input type="text" class="form-input-dash" placeholder="Ej: Portería, edificio, referencia">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-cancel">Cancelar</button>
+            <button class="btn-save" onclick="showAlert('shipping-alert')">Guardar Dirección</button>
+          </div>
+        </div>
+
+        <div class="form-panel">
+          <div class="panel-title">Dirección Secundaria</div>
+          <div class="form-grid">
+            <div class="form-group-dash">
+              <label class="form-label-dash">Nombre completo del destinatario</label>
+              <input type="text" class="form-input-dash" placeholder="Nombre completo">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Teléfono de contacto</label>
+              <input type="tel" class="form-input-dash" placeholder="+57 300 000 0000">
+            </div>
+            <div class="form-group-dash span-2">
+              <label class="form-label-dash">Dirección</label>
+              <input type="text" class="form-input-dash" placeholder="Carrera / Calle, Número">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Ciudad</label>
+              <input type="text" class="form-input-dash" placeholder="Ciudad">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Código Postal</label>
+              <input type="text" class="form-input-dash" placeholder="000000">
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-cancel">Limpiar</button>
+            <button class="btn-save" onclick="showAlert('shipping-alert')">Guardar Dirección</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="dash-payment" class="dash-section">
+        <div class="section-header">
+          <div>
+            <div class="section-title">Datos de Pago</div>
+            <div class="section-subtitle">Métodos de pago y facturación</div>
+          </div>
+          <button class="btn-sm gold">+ Agregar método</button>
+        </div>
+
+        <div class="alert success" id="payment-alert">✓ Datos de pago actualizados correctamente</div>
+
+
+        <div class="form-panel">
+          <div class="panel-title">Tarjeta de Crédito / Débito</div>
+          <div class="form-grid">
+            <div class="form-group-dash span-2">
+              <label class="form-label-dash">Número de tarjeta</label>
+              <input type="text" class="form-input-dash" placeholder="0000 0000 0000 0000" maxlength="19">
+            </div>
+            <div class="form-group-dash span-2">
+              <label class="form-label-dash">Nombre en la tarjeta</label>
+              <input type="text" class="form-input-dash" placeholder="NOMBRE COMO APARECE EN LA TARJETA">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">Fecha de vencimiento</label>
+              <input type="text" class="form-input-dash" placeholder="MM / AA" maxlength="7">
+            </div>
+            <div class="form-group-dash">
+              <label class="form-label-dash">CVV / CVC</label>
+              <input type="text" class="form-input-dash" placeholder="•••" maxlength="4">
+            </div>
+            <div class="form-group-dash span-2">
+              <label class="form-label-dash">Tipo de tarjeta</label>
+              <select class="form-input-dash">
+                <option>Visa</option>
+                <option>Mastercard</option>
+                <option>American Express</option>
+                <option>Diners Club</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn-cancel">Cancelar</button>
+            <button class="btn-save" onclick="showAlert('payment-alert')">Guardar Tarjeta</button>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<script src="js/dashboard.js" defer></script>
+</body>
+</html>
