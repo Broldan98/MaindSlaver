@@ -108,3 +108,22 @@ if (document.readyState === 'loading') {
 }
 
 
+function showDashSection(id, btn) {
+  document.querySelectorAll('.dash-section').forEach((section) => {
+    section.classList.remove('active');
+  });
+ 
+  document.querySelectorAll('.sidebar-item').forEach((item) => {
+    item.classList.remove('active');
+  });
+ 
+  const section = document.getElementById('dash-' + id);
+  if (section) {
+    section.classList.add('active');
+  }
+ 
+  if (btn) {
+    btn.classList.add('active');
+  }
+}
+ 
